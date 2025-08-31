@@ -1,0 +1,46 @@
+{
+  "name": "elan-language-support",
+  "displayName": "ELAN Language Support",
+  "version": "1.0.0",
+  "description": "Language Support for the ELAN language.",
+  "publisher": "jooris-hadeler",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/jooris-hadeler/elan-language-support"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "author": "Jooris Hadeler",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "elan",
+        "aliases": [
+          "ELAN",
+          "elan"
+        ],
+        "extensions": [
+          ".elan",
+          ".el"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "elan",
+        "scopeName": "source.elan",
+        "path": "./syntaxes/elan.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x"
+  }
+}

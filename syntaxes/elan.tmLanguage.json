@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ELAN",
+  "scopeName": "source.elan",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#runes"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#function-calls"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.elan",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.elan",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.elan",
+          "match": "\\b(proc|var|const|of|in|if|else|return|for|while|break|continue)\\b"
+        }
+      ]
+    },
+    "function-calls": {
+      "patterns": [
+        {
+          "name": "meta.function-call.elan",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.elan"
+            },
+            "2": {
+              "name": "punctuation.section.parens.begin.elan"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.elan",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.elan",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "runes": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.elan",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.elan",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.primitive.elan",
+          "match": "\\b(u8|u16|u32|u64|usz|i8|i16|i32|i64|isz|f32|f64|bool|ref|str|rune|array|slice)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.scientific.elan",
+          "match": "\\b\\d+\\.\\d+[eE][+-]?\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.elan",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.hex.elan",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.elan",
+          "match": "\\b0[bB][01]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.elan",
+          "match": "\\b0[oO][0-7]+\\b"
+        },
+        {
+          "name": "constant.numeric.decimal.elan",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.elan",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.elan",
+          "match": "\\b(and|or)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.elan",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.bitwise.elan",
+          "match": "([&|^~]|<<|>>)"
+        },
+        {
+          "name": "keyword.operator.logical.elan",
+          "match": "[!]"
+        },
+        {
+          "name": "keyword.operator.range.elan",
+          "match": "\\.\\."
+        },
+        {
+          "name": "keyword.operator.member.elan",
+          "match": "\\."
+        },
+        {
+          "name": "keyword.operator.equality.elan",
+          "match": "(==|!=)"
+        },
+        {
+          "name": "keyword.operator.order.elan",
+          "match": "(<|>|<=|>=)"
+        },
+        {
+          "name": "keyword.operator.assign.elan",
+          "match": "(=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=|<<=|>>=)"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.comma.elan",
+          "match": ","
+        },
+        {
+          "name": "punctuation.separator.dot.elan",
+          "match": "\\."
+        },
+        {
+          "name": "punctuation.separator.colon.elan",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.terminator.semicolon.elan",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.section.parens.begin.elan",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.section.parens.end.elan",
+          "match": "\\)"
+        },
+        {
+          "name": "punctuation.section.braces.begin.elan",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.braces.end.elan",
+          "match": "\\}"
+        }
+      ]
+    }
+  }
+}
