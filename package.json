@@ -1,12 +1,12 @@
 {
-  "name": "elan-language-support",
-  "displayName": "ELAN Language Support",
+  "name": "myriad-language-support",
+  "displayName": "Myriad Language Support",
   "version": "1.0.0",
-  "description": "Language Support for the ELAN language.",
+  "description": "Language Support for the Myriad language.",
   "publisher": "jooris-hadeler",
   "repository": {
     "type": "github",
-    "url": "https://github.com/jooris-hadeler/elan-language-support"
+    "url": "https://github.com/jooris-hadeler/myriad-language-support"
   },
   "categories": [
     "Programming Languages"
@@ -19,23 +19,23 @@
   "contributes": {
     "languages": [
       {
-        "id": "elan",
+        "id": "myriad",
         "aliases": [
-          "ELAN",
-          "elan"
+          "Myriad",
+          "myriad"
         ],
         "extensions": [
-          ".elan",
-          ".el"
+          ".myriad",
+          ".my"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "elan",
-        "scopeName": "source.elan",
-        "path": "./syntaxes/elan.tmLanguage.json"
+        "language": "myriad",
+        "scopeName": "source.myriad",
+        "path": "./syntaxes/myriad.tmLanguage.json"
       }
     ]
   },

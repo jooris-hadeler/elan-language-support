@@ -1,6 +1,6 @@
-# ELAN Language Support
+# Myriad Language Support
 
-This is the official VS Code extension for the ELAN programming language.
+This is the official VS Code extension for the Myriad programming language.
 
 ## Features
 
